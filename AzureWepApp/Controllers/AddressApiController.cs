@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AddressWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace AddressWebApp.Controllers
 {
@@ -22,7 +23,7 @@ namespace AddressWebApp.Controllers
                 var cities = db.Addresses.Where(a => a.City.Contains(term)).Select(p => p.City).ToList();
                 return Ok(cities);
             }
-            catch
+            catch(Exception e)
             {
                 return BadRequest();
             }
