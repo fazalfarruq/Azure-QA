@@ -25,7 +25,7 @@ namespace AddressWebApp.Controllers
             }
             catch(Exception e)
             {
-                return BadRequest();
+                throw e;
             }
         }
     }
