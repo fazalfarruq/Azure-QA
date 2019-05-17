@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MyAddressBookPlus;
 using System.IO;
 
 namespace AddressWebApp.Models
@@ -12,7 +13,7 @@ namespace AddressWebApp.Models
                                 .SetBasePath(Directory.GetCurrentDirectory())
                                 .AddJsonFile("appsettings.json");
             var configuration = builder.Build();
-            optionsBuilder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
+            optionsBuilder.UseSqlServer(KeyVaultService.DefaultConnection);
 
         }
 
