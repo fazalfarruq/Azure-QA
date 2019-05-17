@@ -55,7 +55,7 @@ namespace MyAddressBookPlus
                 DefaultConnection = secret.Value;
 
             }
-            catch (Exception exp)
+            catch (Exception e)
             {
                 throw e;
             }
